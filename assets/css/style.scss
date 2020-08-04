@@ -21,6 +21,14 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
+
+.wrapper {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
 button {
   border: none;
   background: none;
@@ -154,11 +162,18 @@ button {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   gap: 30px;
+  overflow: hidden;
+  top: 120px;
+  position: fixed;
 }
 
 .wrapper-content .user-section,
 .right-section {
+  height: 65%;
   background-color: white;
+}
+
+.user-section {
   padding: 20px;
 }
 
@@ -235,7 +250,9 @@ button {
   color: $light-text;
 }
 
-.center-section {
+.center-section-pseudo {
+  height: 100vh;
+  overflow-y: scroll;
   .create-post {
     background-color: white;
     padding: 0 20px;
@@ -285,8 +302,134 @@ button {
   width: 100%;
   input {
     width: 100%;
-    padding: 20px 1px;
+    padding: 30px 1px;
     border: none;
     outline: none;
+  }
+}
+
+.post-show {
+  margin-top: 20px;
+  .post-card {
+    background-color: white;
+    padding: 0px 30px;
+    margin-bottom: 20px;
+    .card-head {
+      display: flex;
+      padding: 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 0.5px solid #dadadae8;
+      .user-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        .nameandc {
+          font-size: 16px;
+          display: flex;
+          flex-direction: column;
+          .post-name {
+            color: $dark-text;
+            font-weight: 600;
+          }
+          .post-company {
+            color: $light-text;
+            font-size: 12px;
+          }
+        }
+      }
+      .post-time {
+        font-size: 12px;
+        color: $light-text;
+      }
+    }
+  }
+}
+
+.card-body {
+  border-bottom: 0.5px solid #dadadae8;
+
+  .card-text {
+    padding: 20px 0;
+    color: $light-text;
+    font-size: 16px;
+  }
+  .card-img {
+    padding: 10px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.extra-pseudo {
+  background-color: $bg-color;
+  height: 200px;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.card-footer {
+  padding: 20px;
+  .reaction-panel {
+    color: $light-text;
+    font-size: 12px;
+    button {
+      color: $light-text;
+    }
+  }
+}
+
+.right-section {
+  padding: 0 20px;
+  .right-heading {
+    display: flex;
+    padding: 20px 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #dadadae8;
+    button {
+      font-size: 16px;
+      color: $dark-text;
+      font-weight: 600;
+      outline: none;
+    }
+  }
+}
+
+.user-details {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .nameandc {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    .post-name {
+      color: $dark-text;
+      font-weight: 600;
+    }
+    .post-company {
+      color: $light-text;
+      font-size: 12px;
+    }
   }
 }
