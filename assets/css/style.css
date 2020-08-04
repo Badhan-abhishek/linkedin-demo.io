@@ -10,6 +10,22 @@ button {
   background: none;
 }
 
+::-webkit-input-placeholder {
+  color: #a9a8a8;
+}
+
+:-ms-input-placeholder {
+  color: #a9a8a8;
+}
+
+::-ms-input-placeholder {
+  color: #a9a8a8;
+}
+
+::placeholder {
+  color: #a9a8a8;
+}
+
 .nav-main {
   background-color: white;
   height: 60px;
@@ -153,6 +169,7 @@ button {
   color: #a9a8a8;
   font-weight: 500;
   padding: inherit;
+  cursor: pointer;
 }
 
 .tabs .active-tab {
@@ -283,13 +300,56 @@ button {
 
 .center-section .create-post {
   background-color: white;
-  padding: 20px;
+  padding: 0 20px;
+}
+
+.center-section .create-post .create-options {
   height: 60px;
+  border-bottom: 1px solid #f0f0f0b6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.center-section .create-post .create-options button {
+  font-size: 16px;
+  color: #1b1d1f;
+  font-weight: 600;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-active {
+  border-bottom: 1px solid #3572a3;
+}
+
+.share-update i {
+  color: #0058a2;
+  margin-right: 2px;
+}
+
+.uplaod-photo i {
+  color: #e1bb00;
+  margin-right: 2px;
+}
+
+.write-article i {
+  color: #24d424;
+  margin-right: 2px;
+}
+
+.post-input {
+  width: 100%;
+}
+
+.post-input input {
+  width: 100%;
+  padding: 20px 1px;
+  border: none;
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

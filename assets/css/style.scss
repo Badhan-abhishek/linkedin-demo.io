@@ -26,6 +26,10 @@ button {
   background: none;
 }
 
+::placeholder {
+  color: $light-text;
+}
+
 .nav-main {
   background-color: white;
   height: 60px;
@@ -130,6 +134,7 @@ button {
     color: $light-text;
     font-weight: 500;
     padding: inherit;
+    cursor: pointer;
   }
   .active-tab {
     color: $dark-text;
@@ -233,9 +238,55 @@ button {
 .center-section {
   .create-post {
     background-color: white;
-    padding: 20px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
+    padding: 0 20px;
+    .create-options {
+      height: 60px;
+      border-bottom: 1px solid $border-color;
+      display: flex;
+      justify-content: space-between;
+      button {
+        font-size: 16px;
+        color: $dark-text;
+        font-weight: 600;
+        height: 100%;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.btn-active {
+  border-bottom: 1px solid #3572a3;
+}
+
+.share-update {
+  i {
+    color: $main-color;
+    margin-right: 2px;
+  }
+}
+
+.uplaod-photo {
+  i {
+    color: $second-color;
+    margin-right: 2px;
+  }
+}
+
+.write-article {
+  i {
+    color: rgb(36, 212, 36);
+    margin-right: 2px;
+  }
+}
+
+.post-input {
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 20px 1px;
+    border: none;
+    outline: none;
   }
 }

@@ -81,20 +81,23 @@ Vue.component("content-main", {
       <div class="center-section">
         <div class="create-post">
             <div class="create-options">
-            <button>
-                Share an update
-            </button>
-            <button>
-                Upload a photo
-            </button>
-            <button>
-                Write an article
-            </button>
+                <button class="share-update btn-active">
+                <i class="fas fa-pen"></i> Share an update
+                </button>
+                <button class="uplaod-photo">
+                <i class="fas fa-image fa-1x"></i> Upload a photo
+                </button>
+                <button class="write-article">
+                <i class="fas fa-book-open"></i> Write an article
+                </button>
+            </div>
+            <div class="post-input">
+                <input type="text" placeholder="Write something..." >
             </div>
         </div>
       </div>
       <div class="right-section">
-      c
+      <!-- c -->
       </div>
       </div>`,
   data() {
