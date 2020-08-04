@@ -1,0 +1,241 @@
+$main-color: #0058a2;
+
+$bg-color: #f0f0f083;
+
+$second-color: #e1bb00;
+
+$second-second-color: #01ab5d;
+
+$dark-text: #1b1d1f;
+
+$light-text: #a9a8a8;
+
+$light-icon: #adaeae;
+
+$border-color: #f0f0f0b6;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  background-color: $bg-color;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+button {
+  border: none;
+  background: none;
+}
+
+.nav-main {
+  background-color: white;
+  height: 60px;
+  box-shadow: 0.5px 0.5px 0.5px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-tag {
+  margin: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  gap: 30px;
+  .text-disc {
+    font-size: 20px;
+    border: none;
+    background: none;
+  }
+}
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  margin: 3px 0;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.nav-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  button {
+    border: none;
+    margin: 3px;
+    background: none;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.vr {
+  border-left: 1px solid $light-text;
+  height: 20px;
+  width: 1px;
+  margin: 0 10px;
+}
+
+.fa-linkedin {
+  color: $main-color;
+}
+
+.search-div {
+  display: flex;
+  justify-content: center;
+  input {
+    height: 25px;
+    width: 100%;
+    padding: 0px;
+    background: url("https://img.icons8.com/material-sharp/48/000000/search.png")
+      center left 10px;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    outline: none;
+    background-color: $bg-color;
+    font-size: 16px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    font-weight: 100;
+    color: $dark-text;
+    padding: 5px 40px;
+    &:focus {
+      border: 1px solid $main-color;
+    }
+  }
+}
+
+.tabs {
+  border-top: 0.5px solid rgba(128, 128, 128, 0.315);
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.315);
+  background-color: $bg-color;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .tab-button {
+    width: 100px;
+    height: 60px;
+    margin: 30px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: $light-text;
+    font-weight: 500;
+    padding: inherit;
+  }
+  .active-tab {
+    color: $dark-text;
+    border-bottom: 3px solid $main-color;
+    border-radius: 3px;
+  }
+}
+
+.user-icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.wrapper-content {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 30px;
+}
+
+.wrapper-content .user-section,
+.right-section {
+  background-color: white;
+  padding: 20px;
+}
+
+.user-img {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .image-user-left {
+    border-radius: 50%;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+  .user-name {
+    font-weight: 700;
+  }
+  .company-name {
+    color: $light-text;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}
+
+.status {
+  margin: -20px;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.connections,
+.views {
+  height: 75px;
+  border: 1px solid $border-color;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  // padding: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+.nums {
+  font-weight: 700;
+}
+
+.text {
+  color: $light-text;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.links {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 12px;
+  a {
+    text-decoration: none;
+    color: $light-text;
+  }
+}
+
+.links {
+  i {
+    margin-right: 3px;
+  }
+}
+
+.links > div {
+  margin-top: 15px;
+  color: $light-text;
+}
+
+.center-section {
+  .create-post {
+    background-color: white;
+    padding: 20px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
