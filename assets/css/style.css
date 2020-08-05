@@ -846,4 +846,30 @@ button {
     border-right: none;
   }
 }
+
+.first-col ul li,
+.other-cols ul li {
+  -webkit-animation: growDown 1s ease-in-out forwards;
+          animation: growDown 1s ease-in-out forwards;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+}
+
+@-webkit-keyframes growDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes growDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=style.css.map */

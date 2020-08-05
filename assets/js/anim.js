@@ -2,6 +2,8 @@ var tl = gsap.timeline();
 const tabs = document.querySelector(".tabs");
 const wrapperContent = document.querySelector(".wrapper-content");
 const buttons = tabs.children;
+const dropdown = document.querySelector(".dropdown");
+const dropdownItems = dropdown.children;
 
 tl.from(tabs, { height: -2, opacity: 0, duration: 1, ease: "power1.out" })
   .from(buttons, {

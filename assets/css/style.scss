@@ -700,3 +700,18 @@ button {
     border-right: none;
   }
 }
+
+.first-col ul li,
+.other-cols ul li {
+  animation: growDown 1s ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes growDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
