@@ -150,6 +150,10 @@ button {
   border: 1px solid #0058a2;
 }
 
+.search-div .srch-btn {
+  opacity: 0;
+}
+
 .tabs {
   border-top: 0.5px solid rgba(128, 128, 128, 0.315);
   border-bottom: 0.5px solid rgba(128, 128, 128, 0.315);
@@ -558,5 +562,186 @@ button {
 .user-details .nameandc .post-company {
   color: #a9a8a8;
   font-size: 12px;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper,
+  .wrapper-content {
+    overflow: scroll;
+  }
+  .wrapper-content {
+    position: relative;
+    top: 0;
+    margin: 10px 10px 10px 10px;
+    gap: 10px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .nav-tag {
+    margin: 0 20px;
+    gap: 20px;
+  }
+  .nav-tag .text-disc {
+    font-size: 10px;
+    border: none;
+    background: none;
+  }
+  .tabs {
+    width: 360px;
+  }
+  .tabs .tab-button {
+    width: 50px;
+    height: 30px;
+    margin: 10px;
+    border: none;
+    font-size: 12px;
+    color: #a9a8a8;
+    font-weight: 300;
+  }
+  .tabs .activeTab {
+    color: #1b1d1f;
+    border-bottom: 3px solid #0058a2;
+    border-radius: 3px;
+  }
+  .nav-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .nav-icons button {
+    border: none;
+    margin: 2px;
+    background: none;
+  }
+  .search-div {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .search-div input {
+    opacity: 0;
+    width: 0;
+    height: 15px;
+    background: url("https://img.icons8.com/material-sharp/48/000000/search.png") center left 8px;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    outline: none;
+    background-color: #f0f0f083;
+    font-size: 14px;
+    border: 1px solid #f0f0f0b6;
+    border-radius: 5px;
+    font-weight: 100;
+    color: #1b1d1f;
+    padding: 3px 20px;
+  }
+  .search-div input:focus {
+    border: 1px solid #0058a2;
+  }
+  .search-div .srch-btn {
+    left: -1;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    opacity: 1;
+    background: url("https://img.icons8.com/material-sharp/48/000000/search.png") center left 8px;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    outline: none;
+    background-color: #f0f0f083;
+  }
+  .user-section,
+  .right-section {
+    display: none;
+  }
+  .center-section {
+    width: 100%;
+  }
+  .center-section-pseudo {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  .center-section-pseudo .create-post {
+    background-color: white;
+    padding: 0 10px;
+  }
+  .center-section-pseudo .create-post .create-options {
+    height: 50px;
+    border-bottom: 1px solid #f0f0f0b6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .center-section-pseudo .create-post .create-options button {
+    font-size: 12px;
+    color: #1b1d1f;
+    font-weight: 600;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+  }
+  card-body {
+    border-bottom: 0.5px solid #dadadae8;
+  }
+  card-body .card-text {
+    padding: 10px 0;
+    color: #a9a8a8;
+    font-size: 12px;
+  }
+  card-body .card-img {
+    padding: 5px;
+  }
+  card-body .card-img img {
+    width: 100%;
+  }
+  .post-show {
+    margin-top: 10px;
+  }
+  .post-show .post-card {
+    padding: 0px 15px;
+    margin-bottom: 10px;
+  }
+  .post-show .post-card .card-head {
+    padding: 10px;
+  }
+  .post-show .post-card .card-head .user-details img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .post-show .post-card .card-head .user-details .nameandc {
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .post-show .post-card .card-head .user-details .nameandc .post-name {
+    color: #1b1d1f;
+    font-weight: 600;
+  }
+  .post-show .post-card .card-head .user-details .nameandc .post-company {
+    color: #a9a8a8;
+    font-size: 12px;
+  }
+  .post-show .post-card .card-head .post-time {
+    font-size: 12px;
+    color: #a9a8a8;
+  }
 }
 /*# sourceMappingURL=style.css.map */

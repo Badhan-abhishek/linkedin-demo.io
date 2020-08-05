@@ -15,6 +15,7 @@ Vue.component("navbar", {
             </div>
             <div class="search-div">
                 <input class="input" type="text" placeholder="Search linkedin" ></input>
+                <button class="srch-btn"></button>
             </div>
             <div class="nav-icons"> 
             <button><i class="far fa-comment-alt fa-2x"></i></button>

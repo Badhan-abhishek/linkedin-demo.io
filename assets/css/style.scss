@@ -122,6 +122,9 @@ button {
       border: 1px solid $main-color;
     }
   }
+  .srch-btn {
+    opacity: 0;
+  }
 }
 
 .tabs {
@@ -430,6 +433,178 @@ button {
     .post-company {
       color: $light-text;
       font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper,
+  .wrapper-content {
+    overflow: scroll;
+  }
+  .wrapper-content {
+    position: relative;
+    top: 0;
+    margin: 10px 10px 10px 10px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .nav-tag {
+    margin: 0 20px;
+    gap: 20px;
+    .text-disc {
+      font-size: 10px;
+      border: none;
+      background: none;
+    }
+  }
+  .tabs {
+    width: 360px;
+    .tab-button {
+      width: 50px;
+      height: 30px;
+      margin: 10px;
+      border: none;
+      font-size: 12px;
+      color: $light-text;
+      font-weight: 300;
+    }
+    .activeTab {
+      color: $dark-text;
+      border-bottom: 3px solid $main-color;
+      border-radius: 3px;
+    }
+  }
+
+  .nav-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    button {
+      border: none;
+      margin: 2px;
+      background: none;
+    }
+  }
+
+  .search-div {
+    justify-content: center;
+    input {
+      opacity: 0;
+      width: 0;
+      height: 15px;
+      background: url("https://img.icons8.com/material-sharp/48/000000/search.png")
+        center left 8px;
+      background-repeat: no-repeat;
+      background-size: 12px;
+      outline: none;
+      background-color: $bg-color;
+      font-size: 14px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      font-weight: 100;
+      color: $dark-text;
+      padding: 3px 20px;
+      &:focus {
+        border: 1px solid $main-color;
+      }
+    }
+    .srch-btn {
+      left: -1;
+      width: 30px;
+      height: 30px;
+      border-radius: 3px;
+      opacity: 1;
+      background: url("https://img.icons8.com/material-sharp/48/000000/search.png")
+        center left 8px;
+      background-repeat: no-repeat;
+      background-size: 12px;
+      outline: none;
+      background-color: $bg-color;
+    }
+  }
+
+  .user-section,
+  .right-section {
+    display: none;
+  }
+
+  .center-section {
+    width: 100%;
+  }
+
+  .center-section-pseudo {
+    height: 100vh;
+    overflow-y: scroll;
+    .create-post {
+      background-color: white;
+      padding: 0 10px;
+      .create-options {
+        height: 50px;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        justify-content: space-between;
+        button {
+          font-size: 12px;
+          color: $dark-text;
+          font-weight: 600;
+          height: 100%;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  card-body {
+    border-bottom: 0.5px solid #dadadae8;
+    .card-text {
+      padding: 10px 0;
+      color: $light-text;
+      font-size: 12px;
+    }
+    .card-img {
+      padding: 5px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .post-show {
+    margin-top: 10px;
+    .post-card {
+      padding: 0px 15px;
+      margin-bottom: 10px;
+      .card-head {
+        padding: 10px;
+        .user-details {
+          img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+          .nameandc {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            .post-name {
+              color: $dark-text;
+              font-weight: 600;
+            }
+            .post-company {
+              color: $light-text;
+              font-size: 12px;
+            }
+          }
+        }
+        .post-time {
+          font-size: 12px;
+          color: $light-text;
+        }
+      }
     }
   }
 }
