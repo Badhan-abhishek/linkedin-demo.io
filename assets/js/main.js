@@ -24,15 +24,15 @@ Vue.component("navbar", {
             </nav>
     </div>
     <div class="tabs">
-        <button class="tab-button active-tab">Posts</button>
-        <button class="tab-button">Articles</button>
-        <button class="tab-button">Companies</button>
-        <button class="tab-button">Jobs</button>        
+    <button v-for="(tab, index) in tabs" :key="index" class="tab-button" :class="{activeTab: selectedTab === tab}" @click="selectedTab = tab">{{tab}}</button>
     </div>
+    <content-main :current_user="current_user" v-show="selectedTab ==='Posts'"></content-main>
     </div>`,
   data() {
     return {
       name: "LinkedIn",
+      tabs: ["Posts", "Articles", "Companies", "Jobs"],
+      selectedTab: "Posts",
     };
   },
   computed: {
@@ -206,7 +206,7 @@ Vue.component("content-main", {
           name: "Abhishek",
           avatar:
             "https://images.pexels.com/photos/749091/pexels-photo-749091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          company: "Alibaba LLC",
+          company: "Yahoo Inc",
         },
       ],
     };

@@ -179,7 +179,7 @@ button {
   cursor: pointer;
 }
 
-.tabs .active-tab {
+.tabs .activeTab {
   color: #1b1d1f;
   border-bottom: 3px solid #0058a2;
   border-radius: 3px;
