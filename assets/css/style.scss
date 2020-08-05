@@ -478,6 +478,11 @@ button {
   cursor: pointer;
 }
 
+.first-col {
+  border-right: 1px solid $border-color;
+  height: 200px;
+}
+
 .other-cols li {
   list-style: none;
   cursor: pointer;
@@ -532,7 +537,7 @@ button {
     }
   }
   .tabs {
-    width: 360px;
+    width: 100%;
     .tab-button {
       width: 50px;
       height: 30px;
@@ -678,5 +683,20 @@ button {
         }
       }
     }
+  }
+
+  .dropdown-bar {
+    display: block;
+    overflow: scroll;
+  }
+
+  .dropdown-bar div:last-child {
+    margin-bottom: 110px;
+  }
+
+  .first-col {
+    margin-bottom: 110px;
+    border-bottom: 1px solid $border-color;
+    border-right: none;
   }
 }
