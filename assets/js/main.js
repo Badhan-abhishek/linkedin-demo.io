@@ -11,7 +11,7 @@ Vue.component("navbar", {
             <div class="icon">
             <i class="fab fa-linkedin fa-2x"></i>
             <div class="vr"></div>
-            <button class="text-disc"> Discover <i class="arrow down"></i></button>
+            <button @click="show" class="text-disc"> Discover <i class="arrow" :class="[dropdownOpen === 1 ? 'up' : 'down']"></i></button>
             </div>
             <div class="search-div">
                 <input class="input" type="text" placeholder="Search linkedin" ></input>
@@ -24,17 +24,29 @@ Vue.component("navbar", {
             </div>
             </nav>
     </div>
+    <dropdown v-show="dropdownOpen === 1"></dropdown>
     <div class="tabs">
     <button v-for="(tab, index) in tabs" :key="index" class="tab-button" :class="{activeTab: selectedTab === tab}" @click="selectedTab = tab">{{tab}}</button>
     </div>
     <content-main :current_user="current_user" v-show="selectedTab ==='Posts'"></content-main>
+    <article-tab :current_user="current_user" v-show="selectedTab ==='Articles'"></article-tab>
     </div>`,
   data() {
     return {
       name: "LinkedIn",
       tabs: ["Posts", "Articles", "Companies", "Jobs"],
       selectedTab: "Posts",
+      dropdownOpen: 0,
     };
+  },
+  methods: {
+    show: function () {
+      if (this.dropdownOpen === 1) {
+        return (this.dropdownOpen = 0);
+      } else {
+        return (this.dropdownOpen = 1);
+      }
+    },
   },
   computed: {
     image() {
@@ -238,6 +250,165 @@ Vue.component("content-main", {
       }
     },
   },
+});
+
+Vue.component("article-tab", {
+  props: {
+    current_user: {
+      type: Object,
+    },
+  },
+  template: `
+  <div class="wrapper-article">
+    <div class="left-article">
+      left
+    </div>
+    <div class="center-article">
+      center
+    </div>
+    <div class="right-article">
+      right
+    </div>
+  </div>
+  `,
+
+  data() {
+    return {
+      name: "LinkedIn",
+      posts: [
+        {
+          id: 234,
+          name: "Monica Geller",
+          avatar:
+            "https://images.pexels.com/photos/157661/young-woman-shooting-model-157661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          company: "Facebook Inc",
+          text:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem corrupti sunt possimus, laborum adipisci modi amet ea rerum autem?",
+          postImg: "",
+          time: "Just Now",
+          likes: 0,
+          comments: 0,
+        },
+
+        {
+          id: 233,
+          name: "Abhishek",
+          avatar:
+            "https://images.pexels.com/photos/749091/pexels-photo-749091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          company: "Alibaba LLC",
+          text:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem corrupti sunt possimus, laborum adipisci modi amet ea rerum autem?",
+          postImg:
+            "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+          time: "2 Hours ago",
+          likes: 0,
+          comments: 0,
+        },
+      ],
+      users: [
+        {
+          id: 234,
+          name: "Monica Geller",
+          avatar:
+            "https://images.pexels.com/photos/157661/young-woman-shooting-model-157661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          company: "Facebook Inc",
+        },
+        {
+          id: 233,
+          name: "Abhishek",
+          avatar:
+            "https://images.pexels.com/photos/749091/pexels-photo-749091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          company: "Yahoo Inc",
+        },
+      ],
+    };
+  },
+  methods: {
+    inc: function (index) {
+      if (this.posts[index].likes === 1) {
+        this.posts[index].likes -= 1;
+      } else {
+        this.posts[index].likes += 1;
+      }
+    },
+  },
+  computed: {
+    image() {
+      return this.current_user.profile_picture;
+    },
+    linkedinLink() {
+      return this.current_user.linkedin;
+    },
+    linkedinName() {
+      var ending = "...";
+      var str = this.current_user.linkedin;
+      if (str.length > 25) {
+        return str.substring(0, 25 - ending.length) + ending;
+      } else {
+        return str;
+      }
+    },
+  },
+});
+
+Vue.component("dropdown", {
+  template: `
+  <div class="dropdown-bar">
+    <div class="first-col">
+        <ul>
+        <li>Home</li>
+        <li>Messages</li>
+        <li>Requests</li>
+        <li>Jobs</li>
+        <li>Premium</li>
+        </ul>
+    </div>
+    <div class="other-cols">
+    <ul>
+      <li class="heading">Profile</li>
+      <div class="list-nav">
+      <li>Edit profile</li>
+      <li>My profile</li>
+      <li>Improve</li>
+      <li>Updates</li>
+      <li>Who viewed</li>
+      </div>
+    </ul>
+    </div>
+    <div class="other-cols">
+    <ul>
+    <li class="heading">My network</li>
+    <div class="list-nav">
+    <li>Corrections</li>
+    <li>Add contacts</li>
+    <li>Alimnis</li>
+    <li>People you know</li>
+    <li>Statics</li>
+    </div>
+  </ul>
+    </div>
+    <div class="other-cols">
+    <ul>
+    <li class="heading">Interests</li>
+    <div class="list-nav">
+    <li>Companies</li>
+    <li>Groups</li>
+    <li>Sideshare</li>
+    <li>Learning</li></div>
+  </ul>
+    </div>
+    <div class="other-cols">
+    <ul>
+      <li class="heading">Business services</li>
+      <div class="list-nav">
+      <li>Post a job</li>
+      <li>Talent solutions</li>
+      <li>Advertise</li>
+      <li>Sale solutions</li></div>
+    </ul>
+    </div>
+  </div>
+  `,
 });
 
 var app = new Vue({

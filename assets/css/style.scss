@@ -32,6 +32,7 @@ body {
 button {
   border: none;
   background: none;
+  outline: none;
 }
 
 ::placeholder {
@@ -57,10 +58,21 @@ button {
     font-size: 20px;
     border: none;
     background: none;
+    &:hover {
+      color: $second-color;
+    }
   }
 }
 .arrow {
   border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  margin: 3px 0;
+}
+
+.text-disc:hover > i {
+  border: solid $second-color;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 2px;
@@ -72,6 +84,11 @@ button {
   -webkit-transform: rotate(45deg);
 }
 
+.up {
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+}
+
 .nav-icons {
   display: flex;
   flex-direction: row;
@@ -80,6 +97,7 @@ button {
     border: none;
     margin: 3px;
     background: none;
+    color: $light-icon;
   }
 }
 
@@ -434,6 +452,60 @@ button {
       color: $light-text;
       font-size: 12px;
     }
+  }
+}
+
+.dropdown-bar {
+  border-top: 1px solid $dark-text;
+  z-index: 100000;
+  position: relative;
+  // width: 100%;
+  height: 100vh;
+  background-color: white;
+  padding: 50px 80px;
+  animation: fade-in 0.5s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  font-size: 16px;
+}
+
+.first-col li {
+  list-style: none;
+  margin: 20px;
+  font-weight: 600;
+  color: $dark-text;
+  cursor: pointer;
+}
+
+.other-cols li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.heading {
+  list-style: none;
+  margin: 20px;
+  font-weight: 600;
+  color: $dark-text;
+  cursor: pointer;
+}
+
+.list-nav > li {
+  margin: 10px 20px;
+  color: $light-text;
+  cursor: pointer;
+  &:hover {
+    color: #838383;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;
   }
 }
 

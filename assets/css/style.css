@@ -15,6 +15,7 @@ body {
 button {
   border: none;
   background: none;
+  outline: none;
 }
 
 ::-webkit-input-placeholder {
@@ -68,8 +69,20 @@ button {
   background: none;
 }
 
+.nav-tag .text-disc:hover {
+  color: #e1bb00;
+}
+
 .arrow {
   border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  margin: 3px 0;
+}
+
+.text-disc:hover > i {
+  border: solid #e1bb00;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 2px;
@@ -79,6 +92,11 @@ button {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.up {
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
 }
 
 .nav-icons {
@@ -98,6 +116,7 @@ button {
   border: none;
   margin: 3px;
   background: none;
+  color: #adaeae;
 }
 
 .icon {
@@ -562,6 +581,72 @@ button {
 .user-details .nameandc .post-company {
   color: #a9a8a8;
   font-size: 12px;
+}
+
+.dropdown-bar {
+  border-top: 1px solid #1b1d1f;
+  z-index: 100000;
+  position: relative;
+  height: 100vh;
+  background-color: white;
+  padding: 50px 80px;
+  -webkit-animation: fade-in 0.5s ease-in-out;
+          animation: fade-in 0.5s ease-in-out;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  font-size: 16px;
+}
+
+.first-col li {
+  list-style: none;
+  margin: 20px;
+  font-weight: 600;
+  color: #1b1d1f;
+  cursor: pointer;
+}
+
+.other-cols li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.heading {
+  list-style: none;
+  margin: 20px;
+  font-weight: 600;
+  color: #1b1d1f;
+  cursor: pointer;
+}
+
+.list-nav > li {
+  margin: 10px 20px;
+  color: #a9a8a8;
+  cursor: pointer;
+}
+
+.list-nav > li:hover {
+  color: #838383;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;
+  }
 }
 
 @media screen and (max-width: 800px) {
